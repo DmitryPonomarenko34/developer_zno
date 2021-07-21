@@ -1,0 +1,71 @@
+$default: #2b2b2b;
+$accent: #fff;
+$link: #727272;
+$bg: #1e84bc;
+$bg-gradient: linear-gradient(246.1deg, #44ADE8 6.06%, #1E84BC 93.07%);
+$box-shadow: 0px 6px 16px -2px rgba(0, 0, 0, 0.15);
+
+%nunito-regular {
+  font-family: "Nunito-Regular", sans-serif;
+  font-weight: 400;
+}
+
+%nunito-semibold {
+  font-family: "Nunito-SemiBold", sans-serif;
+  font-weight: 600;
+}
+
+%nunito-bold {
+  font-family: "Nunito-Bold", sans-serif;
+  font-weight: 700;
+}
+
+%nunito-extrabold {
+  font-family: "Nunito-ExtraBold", sans-serif;
+  font-weight: 800;
+}
+
+%nunito-black {
+  font-family: "Nunito-Black", sans-serif;
+  font-weight: 900;
+}
+
+%title {
+  font-size: 34px;
+  line-height: 46px;
+  color: $default;
+  @extend %nunito-extrabold;
+}
+
+%bg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
+}
+
+@mixin laptop-L {
+  @media (max-width: 1200px) { @content; }
+}
+@mixin laptop {
+  @media (max-width: 992px) { @content; }
+}
+@mixin tablet-L {
+  @media (max-width: 768px) { @content; }
+}
+@mixin tablet {
+  @media (max-width: 630px) { @content; }
+}
+@mixin portrait-phones {
+  @media (max-width: 530px) { @content; }
+}
+@mixin mobile-L {
+  @media (max-width: 425px) { @content; }
+}
