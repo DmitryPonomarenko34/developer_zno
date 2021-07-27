@@ -1,0 +1,99 @@
+.header{
+  padding: 9px 0;
+  background-color: $accent;
+  box-shadow: $box-shadow;
+  &__inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__logo{
+    margin-right: auto;
+  }
+  &__links{
+    display: flex;
+  }
+  &__link{
+    display: inline-block;
+    border-radius: 4px;
+    margin-right: 4px;
+    color: #9f9f9f;
+    padding: 4px 9px;
+    @extend %nunito-semibold;
+    &:last-child{
+      margin-right: 0;
+    }
+    &--accent{
+      background: $gradient;
+      color: $accent;
+    }
+  }
+}
+
+.menu{
+  margin-right: 3.3%;
+  &__list {
+    display: flex;
+  }
+  &__list-item{
+    display: flex;
+    align-items: center;
+    cursor: default;
+    position: relative;
+    &::before{
+      opacity: 0;
+      visibility: hidden;
+      content: '';
+      position: absolute;
+      bottom: -21px;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: $gradient;
+      border-radius: 8px 8px 0px 0px;
+      transition: ease opacity 0.3s, ease visibility 0.3s;
+    }
+    +.menu__list-item{
+      margin-left: 45px;
+    }
+    svg{
+      width: 12px;
+      height: 7px;
+      fill: $default;
+    }
+  }
+  &__list-text,
+  &__list-link {
+    margin-right: 4px;
+    font-size: 16px;
+    @extend %nunito-semibold;
+  }
+  &__list-text{
+    
+  }
+  &__list-link{
+    color: $default;
+    margin-right: 0;
+  }
+}
+.submenu {
+  position: absolute;
+  padding: 8px 16px;
+  opacity: 0;
+  visibility: hidden;
+  top: 43px;
+  column-count: 2;
+  width: 100%;
+  z-index: 2;
+  background-color: $accent;
+  border-radius: 0px 0px 8px 8px;
+  box-shadow: $box-shadow;
+  transition: ease opacity 0.3s, ease visibility 0.3s;
+  &__item{
+    margin-bottom: 4px;
+  }
+  &__link{
+    display: block;
+    color: $default;
+  }
+}
