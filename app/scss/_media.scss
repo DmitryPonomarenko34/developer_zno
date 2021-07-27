@@ -1,3 +1,51 @@
+@include min-hover-laptop{
+  .menu{
+    &__list-text,
+    &__list-link{
+      transition: ease color 0.3s;
+    }
+    &__list-item{
+      svg{
+        transition: ease fill 0.3s, ease transform 0.3s;
+      }
+      &:hover{
+        svg{
+          transform: rotate(-180deg);
+          fill: $bg;
+          transition: ease fill 0.3s, ease transform 0.3s;
+        }
+        &::before,
+        .submenu{
+          opacity: 1;
+          visibility: visible;
+          transition: ease opacity 0.3s, ease visibility 0.3s;
+        }
+        .menu__list-text,
+        .menu__list-link{
+          color: $bg;
+          transition: ease color 0.3s;
+        }
+      }
+    }
+  }
+  .submenu{
+    &__link{
+      transition: ease color 0.3s;
+      &:hover{
+        color: $bg;
+        transition: ease color 0.3s;
+      }
+    }
+  }
+}
+
 @include laptop{
-  $box-shadow: 0px 4px 8px -2px rgba(0, 0, 0, 0.15);
+  .footer-top{
+    &__box{
+      cursor: pointer;
+      svg{
+        display: block;
+      }
+    }
+  }
 }

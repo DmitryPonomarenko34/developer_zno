@@ -2,7 +2,8 @@ $default: #2b2b2b;
 $accent: #fff;
 $link: #727272;
 $bg: #1e84bc;
-$bg-gradient: linear-gradient(246.1deg, #44ADE8 6.06%, #1E84BC 93.07%);
+$gradient: linear-gradient(246.1deg, #44ADE8 6.06%, #1E84BC 93.07%);
+$gradient--accent: linear-gradient(246.1deg, #3B9FD7 6.06%, #1A5778 93.07%);
 $box-shadow: 0px 6px 16px -2px rgba(0, 0, 0, 0.15);
 
 %nunito-regular {
@@ -53,6 +54,9 @@ $box-shadow: 0px 6px 16px -2px rgba(0, 0, 0, 0.15);
 
 @mixin laptop-L {
   @media (max-width: 1200px) { @content; }
+}
+@mixin min-hover-laptop {
+  @media (min-width: 992px) { @content; }
 }
 @mixin laptop {
   @media (max-width: 992px) { @content; }

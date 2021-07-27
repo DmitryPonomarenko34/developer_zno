@@ -1,20 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.min.css">
-  <title>Document</title>
+  <title>gedeze</title>
 </head>
 
 <body>
   <div class="site-container">
     @@include('components/_header.html')
     <main class="main"></main>
+    <div class="breadcrumbs">
+      <div class="container">
+        <ul class="breadcrumbs__list">
+          <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="#">
+              Головна
+            </a>
+          </li>
+          <li class="breadcrumbs__item">
+            <span class="breadcrumbs__accent">
+              11 клас
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
     @@include('components/_footer.html')
   </div>
+  <script src="js/main.min.js"></script>
 </body>
 
 </html>

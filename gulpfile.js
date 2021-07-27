@@ -46,6 +46,7 @@ function styles() {
 function scripts() {
   return src([
       'node_modules/jquery/dist/jquery.js',
+      'node_modules/svgxuse/svgxuse.js',
       'app/js/main.js'
     ])
     .pipe(concat('main.min.js'))
@@ -162,6 +163,9 @@ function spriteMulti() {
               },
               {
                 removeXMLProcInst: true
+              },
+              {
+                removeUselessDefs: false
               },
               {
                 removeUselessStrokeAndFill: false,
