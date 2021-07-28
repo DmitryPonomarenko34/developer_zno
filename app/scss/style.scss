@@ -5,6 +5,117 @@
 @import 'global';
 
 @import 'components/header';
+@import 'components/breadcrumbs';
 @import 'components/footer';
+
+.main-page {
+  padding: 32px 0 56px;
+  &__inner {
+    display: flex;
+  }
+  &__content {}
+  &__text {
+    margin-bottom: 30px;
+  }
+  &__box {
+    margin-bottom: 50px;
+    .subtitle{
+      margin-bottom: 25px;
+      color: #9f9f9f;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -24px;
+  }
+  &__list-item {
+    margin-bottom: 24px;
+    padding: 0 24px;
+  }
+  &__list-link {
+    position: relative;
+    @extend %nunito-bold;
+    border-radius: 8px;
+    display: block;
+    padding: 20px 35px;
+    text-align: center;
+    box-shadow: 0px 6px 16px -2px rgba(73, 80, 83, 0.4);
+    color: $accent;
+    &--green{
+      background: linear-gradient(44.55deg, #1C8A12 4.02%, #84E745 89.84%);
+    }
+    &--blue{
+      background: linear-gradient(44.55deg, #1B7CA7 4.02%, #73D0F9 89.84%);
+    }
+    &--orange{
+      background: linear-gradient(44.55deg, #FE5F05 4.02%, #FBB97E 89.84%);
+    }
+    &--neptun{
+      background: linear-gradient(44.55deg, #04826F 4.02%, #5BE8D3 89.84%);
+    }
+    &--red{
+      background: linear-gradient(44.55deg, #DE4831 4.02%, #FE9282 89.84%);
+    }
+    &--yellow{
+      background: linear-gradient(44.55deg, #FC9B29 4.02%, #FCD87B 89.84%);
+    }
+    &--violet-blue{
+      background: linear-gradient(44.55deg, #424BA3 4.02%, #96AFF1 89.84%);
+    }
+    &--violet-purple{
+      background: linear-gradient(44.55deg, #74309D 4.02%, #D592FF 89.84%);
+    }
+    &--jelly-bean{
+      background: linear-gradient(44.55deg, #A22140 4.02%, #FF819F 89.84%);
+    }
+    &--gray{
+      background: linear-gradient(44.55deg, #495053 4.02%, #9BB8C6 89.84%);
+    }
+    &--purple{
+      background: linear-gradient(44.55deg, #3B333F 4.02%, #CE6ACA 89.84%);
+    }
+    &--lime{
+      background: linear-gradient(44.55deg, #2D9D05 4.02%, #4CE8B0 89.84%);
+    }
+    &--pink{
+      background: linear-gradient(44.55deg, #EA2626 4.02%, #CA4FD5 84.92%);
+    }
+    &--purple-blue{
+      background: linear-gradient(44.55deg, #97187B 4.02%, #3EADEC 89.84%);
+    }
+  }
+  &__list-num{
+    margin-bottom: 5px;
+    font-size: 34px;
+    display: block;
+  }
+  &__list-text{ 
+    font-size: 18px;
+  }
+  &__list-info{
+    display: inline-block;
+    position: absolute;
+    background-image: url('../images/icons/multi/spriteMulti.svg#dpa');
+    background-repeat: no-repeat;
+    background-position: 4px center;
+    background-size: 18px;
+    padding: 5px 5px 5px 28px;
+    color: #3671BF;
+    text-transform: uppercase;
+    @extend %nunito-black;
+    left: 21px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    background-color: $accent;
+    border-radius: 30px;
+    bottom: -17px;
+  }
+  &__list--dpa {}
+}
+
+
+.info-box {}
+
+
 
 @import 'media';

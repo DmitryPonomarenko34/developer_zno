@@ -81,10 +81,11 @@
   padding: 8px 16px;
   opacity: 0;
   visibility: hidden;
+  left: 0;
   top: 43px;
   column-count: 2;
   width: 100%;
-  z-index: 2;
+  z-index: 4;
   background-color: $accent;
   border-radius: 0px 0px 8px 8px;
   box-shadow: $box-shadow;

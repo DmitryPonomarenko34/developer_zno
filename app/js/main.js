@@ -1,5 +1,9 @@
 $(function () {
 
+  $('.banner__btn--close').on('click', function(){
+    $(this).closest('.banner').hide();
+  })
+
   // if($(window).width() <= 1200){
   //   $('.submenu').hide();
   //   $('.menu__list-item').on('click', function () {
@@ -7,6 +11,7 @@ $(function () {
   //   });
   // }
 
+  
   if ($(window).width() <= 992) {
     $('.footer-top__list').hide();
     $('.footer-top__box').on('click', function () {

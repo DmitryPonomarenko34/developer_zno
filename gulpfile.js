@@ -67,8 +67,8 @@ function html() {
 }
 
 function images() {
-  return src(['app/images/**/*.{png,jpg}', '!app/images/**/*.webp'])
-    .pipe(changed('app/images/**/*.{png,jpg}'))
+  return src(['app/images/**/*.{png,jpg,gif}', '!app/images/**/*.webp'])
+    .pipe(changed('app/images/**/*.{png,jpg,gif}'))
     .pipe(imagemin([
       imagemin.mozjpeg({
         quality: 70
@@ -76,12 +76,17 @@ function images() {
       imageminPngquant({
         quality: [0.6, 0.7]
       }),
+      imagemin.gifsicle({
+        interlaced: true,
+        optimizationLevel: 3,
+        number: 30,
+      }),
     ], ))
     .pipe(dest('dist/images'))
 }
 
 function imagesWebp() {
-  return src('app/images/**/*.{png,jpg}')
+  return src('app/images/**/*.{png,jpg,gif}')
     .pipe(changed('app/images', {
       extension: '.webp'
     }))
@@ -108,8 +113,7 @@ function spriteMono() {
       shape: {
         transform: [{
           svgo: {
-            plugins: [
-              {
+            plugins: [{
                 inlineStyles: true
               },
               {
@@ -151,8 +155,7 @@ function spriteMulti() {
       shape: {
         transform: [{
           svgo: {
-            plugins: [
-              {
+            plugins: [{
                 inlineStyles: true
               },
               {
@@ -175,7 +178,7 @@ function spriteMulti() {
               },
               {
                 removeAttrs: {
-                  attrs: ['class', 'data-name',],
+                  attrs: ['class', 'data-name', ],
                 },
               },
             ],
