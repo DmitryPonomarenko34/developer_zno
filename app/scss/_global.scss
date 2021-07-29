@@ -208,9 +208,11 @@ body {
   }
   &__list-item{
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
   }
   &__list-text{
+    margin-right: 5px;
     font-size: 12px;
     @extend %nunito-bold;
     color: $link;
