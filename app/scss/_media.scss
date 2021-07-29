@@ -37,6 +37,17 @@
       }
     }
   }
+  .tabs{
+    &__control-link{
+      &:hover{
+        color: $bg;
+        &::before{
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
 }
 
 @include laptop{

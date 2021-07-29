@@ -110,12 +110,15 @@
     border-radius: 30px;
     bottom: -17px;
   }
-  &__list--dpa {}
 }
-
-
-.info-box {}
-
-
+.subjects{
+  padding: 32px 0 54px;
+  &__tabs{
+    margin-bottom: 90px;
+  }
+  &__inner{
+    display: flex;
+  }
+}
 
 @import 'media';

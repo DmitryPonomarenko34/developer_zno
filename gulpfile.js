@@ -14,7 +14,7 @@ const imagemin = require('gulp-imagemin');
 const imageminPngquant = require('imagemin-pngquant');
 const imageminWebp = require('imagemin-webp');
 const del = require('del');
-const webphtml = require('gulp-webp-html');
+const webphtml = require('gulp-xv-webp-html');
 const changed = require('gulp-changed');
 const fileinclude = require('gulp-file-include');
 const svgSprite = require('gulp-svg-sprite');
@@ -61,7 +61,7 @@ function html() {
       prefix: '@@',
       basepath: '@file'
     }))
-    .pipe(webphtml())
+    .pipe(webphtml(['.jpg', '.png', '.gif']))
     .pipe(dest('app'))
     .pipe(browserSync.stream())
 }
