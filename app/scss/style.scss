@@ -139,6 +139,7 @@
 }
 
 .book-page{
+  padding: 60px 0;
   &__inner{
     display: flex;
   }
@@ -159,39 +160,14 @@
   }
 }
 
-.info-links {
-  &__list {
+.theme{
+  padding: 60px 0;
+  &__inner{
+    display: flex;
   }
-  &__list-item {
-    position: relative;
-    +.info-links__list-item{
-      margin-top: 20px;
-    }
-  }
-  &__list-link {
-    display: block;
-    padding: 6px 16px;
-    color: $default;
-    @extend %nunito-bold;
-    background-color: $accent;
-    box-shadow: $box-shadow;
-    border-radius: 8px;
-  }
-  &__text {
-    position: absolute;
-    padding: 2px 5px;
-    text-align: end;
-    min-width: 78px;
-    right: 10px;
-    top: -11px;
-    font-size: 11px;
-    color: $accent;
-    background-color: #ffa425;
-    border-radius: 30px;
-    box-shadow: $box-shadow;
-    @extend %nunito-extrabold;
+  &__info-links{
+    margin-bottom: 60px;
   }
 }
-
 
 @import 'media';

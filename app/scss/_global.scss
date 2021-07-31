@@ -259,3 +259,84 @@ body {
 .jq-ry-container{
   padding: 0;
 }
+
+
+.info-links {
+  &__list {
+  }
+  &__list-item {
+    position: relative;
+    +.info-links__list-item{
+      margin-top: 20px;
+    }
+  }
+  &__list-link {
+    display: block;
+    padding: 6px 16px;
+    color: $default;
+    @extend %nunito-bold;
+    background-color: $accent;
+    box-shadow: $box-shadow;
+    border-radius: 8px;
+  }
+  &__text {
+    position: absolute;
+    padding: 2px 5px;
+    text-align: end;
+    min-width: 78px;
+    right: 10px;
+    top: -11px;
+    font-size: 11px;
+    color: $accent;
+    background-color: #ffa425;
+    border-radius: 30px;
+    box-shadow: $box-shadow;
+    @extend %nunito-extrabold;
+  }
+}
+
+.section-breadcrumbs {
+  list-style: disc;
+  padding-left: 16px;
+  margin-bottom: 32px;
+  &__item {
+    position: relative;
+    &::before{
+      content: '';
+      position: absolute;
+      width: 17px;
+      height: 16px;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      background-image: url('../images/icons/multi/spriteMulti.svg#arrow-right');
+      background-repeat: no-repeat;
+    }
+    +.section-breadcrumbs__item{
+      margin-top: 12px;
+    }
+    &:nth-child(n+2){
+      &::before{
+        opacity: 1;
+      }
+    } 
+    &:nth-child(2){
+      padding-left: 24px;
+      list-style: none;
+    }
+    &:nth-child(3){
+      padding-left: 40px;
+      list-style: none;
+      &::before{
+        left: 16px;
+      }
+    }
+  }
+  &__link {
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: underline;
+    color: $link;
+  }
+}
+
