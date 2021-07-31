@@ -170,4 +170,12 @@
   }
 }
 
+.exercises{
+  padding: 60px 0;
+  &__inner{
+    display: flex;
+  }
+}
+
+
 @import 'media';

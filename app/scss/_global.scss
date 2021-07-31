@@ -340,3 +340,29 @@ body {
   }
 }
 
+
+.exercises-items{
+  &__list{
+    margin: 0 -4px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+  }
+  &__list-item{
+    margin-bottom: 10px;
+    padding: 0 4px;
+  }
+  &__list-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 88px;
+    border-radius: 8px;
+    height: 40px;
+    color: $default;
+    @extend %nunito-bold;
+    box-shadow: $box-shadow;
+    background-color: $accent;
+  }
+}
+
