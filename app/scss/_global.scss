@@ -227,3 +227,35 @@ body {
   }
 }
 
+.users{
+  display: inline-block;
+  position: relative;
+  padding-left: 16px;
+  color: $link;
+  font-size: 13px;
+  @extend %nunito-semibold;
+  &::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    background-image: url('../images/icons/multi/spriteMulti.svg#user');
+    background-repeat: no-repeat;
+  }
+}
+
+.info-rate{
+  margin-bottom: 5px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  &__users{
+    margin-left: 5px;
+  }
+}
+
+.jq-ry-container{
+  padding: 0;
+}
