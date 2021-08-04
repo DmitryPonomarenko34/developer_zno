@@ -353,7 +353,7 @@ body {
     padding: 0 4px;
   }
   &__list-link{
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     min-width: 88px;
@@ -362,7 +362,88 @@ body {
     color: $default;
     @extend %nunito-bold;
     box-shadow: $box-shadow;
+    cursor: pointer;
     background-color: $accent;
+  }
+  &__list-item--active{
+    .exercises-items__list-link{
+      background: $gradient;
+      color: $accent;
+    }
+  }
+}
+
+.popup-form {
+  display: none;
+  padding: 32px;
+  width: 100%;
+  max-width: 444px;
+  box-shadow: $box-shadow;
+  border-radius: 16px;
+  background-color: $accent;
+  &__title {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  &__item {
+    display: block;
+    margin-bottom: 16px;
+    .popup-error{
+      color: #fa3636;
+      margin: 2px 0;
+    }
+  }
+  &__label {
+    @extend %nunito-bold;
+    color: $link;
+    margin-bottom: 8px;
+  }
+  &__input,
+  &__textarea{
+    border: 1px solid transparent;
+    color: $default;
+    &.popup-error{
+      border: 1px solid #fa3636;
+    }
+  }
+  &__input,
+  &__textarea {
+    display: block;
+    width: 100%;
+    padding: 8px 16px;
+    font-size: 16px;
+    color: $default;
+    border: 1px solid #e4e4e4;
+    border-radius: 8px;
+    &::placeholder{
+      font-size: 16px;
+      color: $default;
+      opacity: 0.4;
+    }
+  }
+  &__textarea {
+    resize: none;
+    height: 160px;
+  }
+  &__btns {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  &__btn-close,
+  &__btn{
+    border: none;
+  }
+  &__btn-close {
+    margin-right: 40px;
+    color: $link;
+    font-size: 16px;
+    @extend %nunito-bold;
+    cursor: pointer;
+    background-color: transparent;
+  }
+  &__btn {
+    @extend %link;
   }
 }
 

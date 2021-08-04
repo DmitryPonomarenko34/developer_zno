@@ -9,10 +9,6 @@
 @import 'components/footer';
 
 .main-page {
-  padding: 32px 0 56px;
-  &__inner {
-    display: flex;
-  }
   &__content {}
   &__text {
     margin-bottom: 30px;
@@ -113,20 +109,12 @@
 }
 
 .subjects{
-  padding: 32px 0 54px;
   &__tabs{
     margin-bottom: 90px;
-  }
-  &__inner{
-    display: flex;
   }
 }
 
 .books{
-  padding: 40px 0;
-  &__inner{
-    display: flex;
-  }
   &__content-inner{
     display: flex;
     flex-wrap: wrap;
@@ -139,10 +127,6 @@
 }
 
 .book-page{
-  padding: 60px 0;
-  &__inner{
-    display: flex;
-  }
   &--item{
     width: 100%;
     .books-item__box{
@@ -161,19 +145,123 @@
 }
 
 .theme{
-  padding: 60px 0;
-  &__inner{
-    display: flex;
-  }
   &__info-links{
     margin-bottom: 60px;
   }
 }
 
-.exercises{
+.exercises,
+.exercises-page,
+.theme,
+.book-page,
+.books,
+.subjects,
+.main-page{
   padding: 60px 0;
   &__inner{
     display: flex;
+  }
+}
+
+.exercises-page { 
+  &__box {
+    text-align: center;
+    background-color: $accent;
+    box-shadow: $box-shadow;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 40px;
+  }
+  &__subtitle {
+    color: $accent;
+    display: block;
+    text-align: center;
+    padding: 12px 0;
+    background: $gradient;
+    margin-bottom: 0;
+    border-radius: 8px 8px 0px 0px;
+  }
+  &__control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  &__control-links{
+    display: flex;
+  }
+  &__link {
+    position: relative;
+    @extend %nunito-bold;
+    color: $link;
+    &::before,
+    &::after{
+      content: '';
+      position: absolute;
+      top: 4px;
+      width: 8px;
+      height: 14px;
+      background-repeat: no-repeat;
+    }
+
+  }
+  &__link--prev {
+    padding-left: 16px;
+    &::before{
+      left: 0;
+      background-image: url('../images/icons/multi/angle-prev.svg');
+    }
+  }
+  &__zoom-link {
+    display: flex;
+    width: 107px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: $box-shadow;
+    background: $gradient;
+    svg{
+      fill: transparent;
+      width: 20px;
+      height: 20px;
+    }
+    +.exercises-page__zoom-link{
+      margin-left: 16px;
+    }
+  }
+  &__zoom-link--minus {
+  }
+  &__zoom-link--plus {
+  }
+  &__link--next {
+    padding-right: 16px;
+    &::after{
+      right: 0;
+      background-image: url('../images/icons/multi/angle-next.svg');
+    }
+  }
+  &__for {
+    margin-bottom: 16px;
+  }
+  &__for-item {
+    display: none;
+    img{
+      cursor: zoom-in;
+      margin: 0 auto;
+      max-width: 728px;
+      width: 100%;
+      max-height: 600px;
+    }
+  }
+  &__for-item--active{
+    display: block;
+  }
+  &__link-error {
+    font-size: 16px;
+    color: $link;
+    text-decoration: underline;
   }
 }
 

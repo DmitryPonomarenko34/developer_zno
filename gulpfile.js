@@ -14,7 +14,7 @@ const imagemin = require('gulp-imagemin');
 const imageminPngquant = require('imagemin-pngquant');
 const imageminWebp = require('imagemin-webp');
 const del = require('del');
-const webphtml = require('gulp-xv-webp-html');
+const webphtml = require('gulp-webp-html');
 const changed = require('gulp-changed');
 const fileinclude = require('gulp-file-include');
 const svgSprite = require('gulp-svg-sprite');
@@ -48,6 +48,8 @@ function scripts() {
       'node_modules/jquery/dist/jquery.js',
       'node_modules/svgxuse/svgxuse.js',
       'node_modules/rateyo/src/jquery.rateyo.js',
+      'node_modules/@fancyapps/ui/dist/fancybox.umd.js',
+      'node_modules/jquery-validation/dist/jquery.validate.js',
       'app/js/main.js'
     ])
     .pipe(concat('main.min.js'))
@@ -62,7 +64,7 @@ function html() {
       prefix: '@@',
       basepath: '@file'
     }))
-    .pipe(webphtml(['.jpg', '.png', '.gif']))
+    .pipe(webphtml())
     .pipe(dest('app'))
     .pipe(browserSync.stream())
 }
@@ -134,7 +136,7 @@ function spriteMono() {
               },
               {
                 removeAttrs: {
-                  attrs: ['class', 'data-name', 'fill', 'stroke'],
+                  attrs: ['class', 'data-name', 'fill'],
                 },
               },
             ],
