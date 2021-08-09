@@ -48,7 +48,7 @@ function scripts() {
       'node_modules/jquery/dist/jquery.js',
       'node_modules/svgxuse/svgxuse.js',
       'node_modules/rateyo/src/jquery.rateyo.js',
-      'node_modules/@fancyapps/ui/dist/fancybox.umd.js',
+      'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
       'node_modules/jquery-validation/dist/jquery.validate.js',
       'app/js/main.js'
     ])

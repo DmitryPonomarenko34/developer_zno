@@ -30,6 +30,12 @@ body {
 
 .info-box{
   margin-bottom: 25px;
+  &__text{
+    margin-bottom: 32px;
+  }
+  &__link{
+    @extend %link;
+  }
 }
 
 .title {
@@ -37,6 +43,11 @@ body {
   font-size: 34px;
   line-height: 46px;
   @extend %nunito-extrabold;
+  &--active{
+    svg{
+      transform: rotate(-180deg);
+    }
+  }
 }
 
 .subtitle{
@@ -80,11 +91,11 @@ body {
 }
 
 .banner {
-  flex-shrink: 0;
+  flex: none;
   display: inline-block;
   position: relative;
   img{
-    position: relative;
+    width: 100%;
   }
   &__btns {
     display: flex;
@@ -101,11 +112,16 @@ body {
       margin-left: 5px;
     }
   }
+  &--desktop{
+    text-align: right;
+  }
   &--start{
     margin: 25px 0;
   }
   &--right{
-    margin-left: 90px;
+    text-align: right;
+    max-width: 300px;
+    margin-left: 75px;
   }
   &--left{
     margin-right: 90px;
@@ -205,9 +221,12 @@ body {
     margin-right: 12px;
   }
   &__list{
+    display: flex;
+    flex-wrap: wrap;
   }
   &__list-item{
     display: flex;
+    width: 100%;
     align-items: center;
     flex-wrap: wrap;
   }
@@ -374,7 +393,7 @@ body {
 }
 
 .popup-form {
-  display: none;
+  margin: 0 auto;
   padding: 32px;
   width: 100%;
   max-width: 444px;
@@ -435,15 +454,50 @@ body {
     border: none;
   }
   &__btn-close {
-    margin-right: 40px;
-    color: $link;
-    font-size: 16px;
-    @extend %nunito-bold;
-    cursor: pointer;
-    background-color: transparent;
+   
   }
   &__btn {
     @extend %link;
+  }
+}
+
+.mfp-close-btn-in .mfp-close{
+  display: inline-block;
+  position: relative;
+  margin-right: 60px;
+  color: $link;
+  font-size: 16px;
+  @extend %nunito-bold;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.spoiler{
+  &__text{
+    display: none;
+    flex: none;
+  }
+  &__icon{
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: $gradient;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+  .title {
+    cursor: pointer;
+    position: relative;
+  }
+  svg{
+    width: 15px;
+    height: 16px;
+    fill: $accent;
   }
 }
 

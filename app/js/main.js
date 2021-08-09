@@ -1,5 +1,40 @@
 $(function () {
 
+  $('.exercises-page__link-error').magnificPopup({
+    type:'inline',
+    midClick: true,
+    closeBtnInside:true,
+    showCloseBtn: true
+  });
+
+
+  let pageTitle = $('.title');
+  if ($('.spoiler')) {
+
+    pageTitle.on('click', function () {
+      $(this).toggleClass('title--active')
+      $('.spoiler__text').slideToggle();
+    })
+
+  }
+
+
+  $('.image-zoom').magnificPopup({
+    type: 'image',
+    mainClass: 'mfp-with-zoom',
+    zoom: {
+      enabled: true,
+
+      duration: 300,
+      easing: 'ease-in-out',
+
+      opener: function (openerElement) {
+        return openerElement.is('img') ? openerElement : openerElement.find('img');
+      }
+    },
+  });
+
+
   $('#popup-form').validate({
     rules: {
       name: {
@@ -37,14 +72,16 @@ $(function () {
     errorElement: "p",
   });
 
-  $('.exercises-items__list-link').on('click', function (e) {
-    e.preventDefault();
-    $('.exercises-items__list-link').parent().removeClass('exercises-items__list-item--active');
-    $(this).parent().addClass('exercises-items__list-item--active');
+  if ($('.exercises-page__for').length) {
+    $('.exercises-items__list-link').on('click', function (e) {
+      e.preventDefault();
+      $('.exercises-items__list-link').parent().removeClass('exercises-items__list-item--active');
+      $(this).parent().addClass('exercises-items__list-item--active');
 
-    $('.exercises-page__for-item').removeClass('exercises-page__for-item--active');
-    $($(this).attr('href')).addClass('exercises-page__for-item--active');
-  });
+      $('.exercises-page__for-item').removeClass('exercises-page__for-item--active');
+      $($(this).attr('href')).addClass('exercises-page__for-item--active');
+    });
+  }
 
   $(".rate").rateYo({
     readOnly: true,

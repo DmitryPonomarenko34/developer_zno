@@ -37,6 +37,7 @@
       }
     }
   }
+
   .tabs{
     &__control-link{
       &:hover{
@@ -45,6 +46,24 @@
           opacity: 1;
           visibility: visible;
         }
+      }
+    }
+  }
+
+  .info-links {
+    &__list-link {
+     &:hover{
+       background: $gradient;
+       color: $accent;
+     }
+    }
+  }
+
+  .exercises-items{
+    &__list-link{
+      &:hover{
+        background: $gradient;
+        color: $accent;
       }
     }
   }
