@@ -10,6 +10,10 @@ body {
   @extend %nunito-regular;
 }
 
+.body--lock{
+  overflow: hidden;
+}
+
 .main {
   flex-grow: 1;
 }
@@ -291,7 +295,7 @@ body {
   }
   &__list-link {
     display: block;
-    padding: 6px 16px;
+    padding: 14px 16px;
     color: $default;
     @extend %nunito-bold;
     background-color: $accent;
@@ -501,3 +505,55 @@ body {
   }
 }
 
+.menu-btn{
+  position: relative;
+  display: none;
+  z-index: 2;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 0;
+  width: 30px;
+  height: 22px;
+  background-color: transparent;
+  cursor: pointer;
+  
+  &::after,
+  &::before{
+    content: "";
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: $default;
+    transition: ease 0.3s bottom, ease 0.3s top, ease 0.3s transform;
+  }
+  &::after{
+    top: auto;
+    bottom: 0;
+  }
+  &--active{
+    .menu-btn__line{
+      opacity: 0;
+      transition: ease 0.3s opacity;
+    }
+    &::before{
+      transform: rotate(-45deg);
+      top: 10px;
+      transition: ease 0.3s transform, ease 0.3s top;
+    }
+    &::after{
+      transform: rotate(45deg);
+      bottom: 10px;
+      transition: ease 0.3s transform, ease 0.3s bottom;
+    }
+  }
+  &__line{
+    width: 100%;
+    border-radius: 2px;
+    height: 2px;
+    background-color: $default;
+    transition: ease 0.3s transform opacity;
+  }
+}

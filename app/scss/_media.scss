@@ -10,8 +10,8 @@
       }
       &:hover{
         svg{
-          transform: rotate(-180deg);
           fill: $bg;
+          transform: rotate(-180deg);
           transition: ease fill 0.3s, ease transform 0.3s;
         }
         &::before,
@@ -53,8 +53,8 @@
   .info-links {
     &__list-link {
      &:hover{
-       background: $gradient;
        color: $accent;
+       background: $gradient;
      }
     }
   }
@@ -78,7 +78,306 @@
       }
     }
   }
+
   .banner--desktop{
     display: none;
+  }
+
+  .menu-btn{
+    position: relative;
+    z-index: 6;
+    display: flex;
+  }
+
+  .main-page{
+    &__list{
+      margin: 0 -15px;
+    }
+    &__list-item{
+      margin-bottom: 25px;
+      padding: 0 15px;
+    }
+    &__list-info{
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  .header{
+    position: relative;
+    &::before{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 6;
+      width: 100%;
+      height: 100%;
+      background-color: $accent;
+    }
+    &__logo{
+      position: relative;
+      z-index: 7;
+    }
+    &__links{
+      justify-content: center;
+    }
+    &__link{
+      font-size: 16px;
+      color: $accent;
+    }
+    &__link--accent{
+      color: $bg;
+      background: $accent;
+    }
+  }
+  .menu{
+    margin-right: 0;
+    &__list{
+      position: fixed;
+      right: -200%;
+      top: 0;
+      z-index: 5;
+      display: block;
+      overflow-y: auto;
+      padding: 80px 20px 20px;
+      width: 50%;
+      height: 100%;
+      text-align: center;
+      background: $gradient;
+      transition: ease 0.8s right;
+      &--active{
+        right: 0;
+        transition: ease 0.3s right;
+      }
+    }
+    &__list-item{
+      display: block;
+      +.menu__list-item{
+        margin-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.4);
+        padding: 20px 0;
+      }
+      svg{
+        display: none;
+      }
+      &:first-child{
+        padding-bottom: 20px;
+      }
+    }
+    &__list-text{
+      pointer-events: none;
+    }
+    &__list-text, 
+    &__list-link{
+      margin-right: 0;
+      margin-bottom: 15px;
+      font-size: 18px;
+      color: $accent;
+    }
+  }
+
+  .submenu{
+    position: static;
+    display: block;
+    box-shadow: none;
+    background-color: transparent;
+    opacity: 1;
+    visibility: visible;
+    &__link{
+      color: $accent;
+    }
+  }
+
+  .footer-top{
+    &__inner{
+      margin: 0 -20px;
+    }
+    &__item{
+      padding: 0 20px;
+      max-width: 400px;
+    }
+  }
+
+  .books{
+    &__content-inner{
+      .books-item{
+        width: 50%;
+      }
+    }
+  }
+
+  .books-item{
+    &__box{
+      width: 100%;
+      max-width: none;
+    }
+  }
+}
+
+@include tablet-L{
+  .exercises, 
+  .exercises-page, 
+  .theme, 
+  .book-page, 
+  .books, 
+  .subjects, 
+  .main-page, 
+  .page-404{
+    padding: 30px 0;
+  }
+
+  .books{
+    &__content-inner{
+      .books-item{
+        width: 100%;
+      }
+    }
+  }
+
+  .exercises-page{
+    &__control {
+      flex-wrap: wrap;
+    }
+    &__control-links{
+      justify-content: space-between;
+      order: 1;
+      margin-top: 15px;
+      width: 100%;
+    }
+  }
+}
+
+@include tablet{
+  .footer-top{
+    &__item{
+      width: 50%;
+    }
+  }
+  .exercises-items{
+    &__list-item{
+      width: 24.333%;
+    }
+    &__list-link{
+      width: 100%;
+      min-width: auto;
+    }
+  }
+}
+
+@include portrait-phones{
+  .title{
+    font-size: 28px;
+    line-height: 38px;
+  }
+ 
+  .menu{
+    &__list{
+      width: 100%;
+    }
+  }
+  .footer-info{
+    &__inner{
+      display: block;
+      text-align: center;
+    }
+    &__link{
+      display: block;
+      +.footer-info__link{
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .tabs{
+    &__content{
+      margin: 0 -5px;
+    }
+    &__control-link{
+      display: inline-block;
+      margin-bottom: 20px;
+      width: 100%;
+      +.tabs__control-link{
+        margin-left: 0;
+      }
+    }
+    .subjects-item{
+      padding: 0 5px;
+      width: 50%;
+      &__link{
+        display: flex;
+        width: auto;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+@include mobile-L{
+  .main-page{
+    &__list-item{
+      width: 50%;
+    }
+  }
+
+  .footer-top{
+    &__box{
+      svg{
+        width: 15px;
+        height: 16px;
+      }
+    }
+    &__title{
+      font-size: 18px;
+    }
+    &__item{
+      width: 100%;
+    }
+    &__list-item{
+      margin-bottom: 11px;
+    }
+  }
+
+  .books-item{
+    &__box{
+      display: block;
+      text-align: center;
+    }
+    &__list{
+      display: block;
+      text-align: center;
+    }
+    &__list-item{
+      display: block;
+    }
+    &__list-text{
+      display: block;
+    }
+  }
+
+  .book-page--item{
+    .books-item__list{
+      text-align: start;
+    }
+    .books-item__list-item{
+      display: flex;
+    }
+    .books-item__list-text--fluid{
+      display: inline-block;
+      width: auto;
+    }
+    .books-item__link{
+      display: block;
+      margin-bottom: 15px;
+    }
+  }
+
+  .info-rate{
+    margin-bottom: 15px;
+  }
+
+  .exercises-items{
+    &__list-item{
+      width: 33.333%;
+    }
   }
 }

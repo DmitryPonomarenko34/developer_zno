@@ -4,12 +4,14 @@
 }
 
 .footer-top{
-  padding: 34px 0 25px;
+  padding: 34px 0 10px;
   &__inner{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
   &__item{
+    margin-bottom: 30px;
     max-width: 26%;
   }
   &__box{
@@ -23,6 +25,13 @@
       fill: $accent;
       width: 9px;
       height: 15px;
+      transition: ease transform 0.3s;
+    }
+    &--active{
+      svg{
+        transform: rotate(-180deg);
+        transition: ease transform 0.3s;
+      }
     }
   }
   &__title{

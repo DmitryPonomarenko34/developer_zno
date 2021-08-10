@@ -1,5 +1,12 @@
 $(function () {
 
+  $('.menu-btn').on('click', function(){
+    $('.menu__list').toggleClass('menu__list--active');
+    $(this).toggleClass('menu-btn--active');
+    $('body').toggleClass('body--lock');
+  });
+
+
   $('.exercises-page__link-error').magnificPopup({
     type:'inline',
     midClick: true,
@@ -118,19 +125,37 @@ $(function () {
     $(this).closest('.banner').hide();
   });
 
-  // if($(window).width() <= 1200){
-  //   $('.submenu').hide();
-  //   $('.menu__list-item').on('click', function () {
-  //     $(this).children('.submenu').slideToggle();
-  //   });
-  // }
+  if($(window).width() <= 1200){
+
+    $('.submenu').hide();
+    $('.menu__list-item').on('click', function () {
+      $(this).children('.submenu').slideToggle();
+    });
+  }
 
 
   if ($(window).width() <= 992) {
+
+    $('.submenu').show();
+
     $('.footer-top__list').hide();
     $('.footer-top__box').on('click', function () {
       $(this).next().slideToggle();
+      $(this).toggleClass('footer-top__box--active');
     });
-  };
+
+    $('.header__links').appendTo('.menu__list');
+
+  }
+
+  if ($(window).width() <= 530){
+    let strokeText = 'завдання';
+    
+    $('.exercises-page__link-text').text(strokeText);
+  }
+
+  if ($(window).width() <= 425) {
+    $('.info-rate').prependTo('.books-item__box');
+  }
 
 });
