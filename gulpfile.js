@@ -46,6 +46,10 @@ function styles() {
 function scripts() {
   return src([
       'node_modules/jquery/dist/jquery.js',
+      'node_modules/svgxuse/svgxuse.js',
+      'node_modules/rateyo/src/jquery.rateyo.js',
+      'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
+      'node_modules/jquery-validation/dist/jquery.validate.js',
       'app/js/main.js'
     ])
     .pipe(concat('main.min.js'))
@@ -66,8 +70,8 @@ function html() {
 }
 
 function images() {
-  return src(['app/images/**/*.{png,jpg}', '!app/images/**/*.webp'])
-    .pipe(changed('app/images/**/*.{png,jpg}'))
+  return src(['app/images/**/*.{png,jpg,gif}', '!app/images/**/*.webp'])
+    .pipe(changed('app/images/**/*.{png,jpg,gif}'))
     .pipe(imagemin([
       imagemin.mozjpeg({
         quality: 70
@@ -75,12 +79,17 @@ function images() {
       imageminPngquant({
         quality: [0.6, 0.7]
       }),
+      imagemin.gifsicle({
+        interlaced: true,
+        optimizationLevel: 3,
+        number: 30,
+      }),
     ], ))
     .pipe(dest('dist/images'))
 }
 
 function imagesWebp() {
-  return src('app/images/**/*.{png,jpg}')
+  return src('app/images/**/*.{png,jpg,gif}')
     .pipe(changed('app/images', {
       extension: '.webp'
     }))
@@ -107,8 +116,7 @@ function spriteMono() {
       shape: {
         transform: [{
           svgo: {
-            plugins: [
-              {
+            plugins: [{
                 inlineStyles: true
               },
               {
@@ -128,7 +136,7 @@ function spriteMono() {
               },
               {
                 removeAttrs: {
-                  attrs: ['class', 'data-name', 'fill', 'stroke'],
+                  attrs: ['class', 'data-name', 'fill'],
                 },
               },
             ],
@@ -150,8 +158,7 @@ function spriteMulti() {
       shape: {
         transform: [{
           svgo: {
-            plugins: [
-              {
+            plugins: [{
                 inlineStyles: true
               },
               {
@@ -164,6 +171,9 @@ function spriteMulti() {
                 removeXMLProcInst: true
               },
               {
+                removeUselessDefs: false
+              },
+              {
                 removeUselessStrokeAndFill: false,
               },
               {
@@ -171,7 +181,7 @@ function spriteMulti() {
               },
               {
                 removeAttrs: {
-                  attrs: ['class', 'data-name',],
+                  attrs: ['class', 'data-name', ],
                 },
               },
             ],

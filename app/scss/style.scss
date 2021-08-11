@@ -1,7 +1,301 @@
-@import 'vars';
-@import 'fonts';
-@import 'reset';
-@import 'libs';
-@import 'global';
+@import "vars";
+@import "fonts";
+@import "reset";
+@import "libs";
+@import "global";
+@import "components/header";
+@import "components/breadcrumbs";
+@import "components/footer";
 
-@import 'media';
+.main-page {
+  &__text {
+    margin-bottom: 30px;
+  }
+  &__box {
+    margin-bottom: 50px;
+    .subtitle{
+      margin-bottom: 25px;
+      color: #9f9f9f;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -24px;
+  }
+  &__list-item {
+    margin-bottom: 24px;
+    padding: 0 24px;
+  }
+  &__list-link {
+    position: relative;
+    display: block;
+    border-radius: 8px;
+    padding: 20px 35px;
+    box-shadow: 0 6px 16px -2px rgba(73, 80, 83, 0.4);
+    text-align: center;
+    color: $accent;
+    @extend %nunito-bold;
+    &--green{
+      background: linear-gradient(44.55deg, #1c8a12 4.02%, #84e745 89.84%);
+    }
+    &--blue{
+      background: linear-gradient(44.55deg, #1b7ca7 4.02%, #73d0f9 89.84%);
+    }
+    &--orange{
+      background: linear-gradient(44.55deg, #fe5f05 4.02%, #fbb97e 89.84%);
+    }
+    &--neptun{
+      background: linear-gradient(44.55deg, #04826f 4.02%, #5be8d3 89.84%);
+    }
+    &--red{
+      background: linear-gradient(44.55deg, #de4831 4.02%, #fe9282 89.84%);
+    }
+    &--yellow{
+      background: linear-gradient(44.55deg, #fc9b29 4.02%, #fcd87b 89.84%);
+    }
+    &--violet-blue{
+      background: linear-gradient(44.55deg, #424ba3 4.02%, #96aff1 89.84%);
+    }
+    &--violet-purple{
+      background: linear-gradient(44.55deg, #74309d 4.02%, #d592ff 89.84%);
+    }
+    &--jelly-bean{
+      background: linear-gradient(44.55deg, #a22140 4.02%, #ff819f 89.84%);
+    }
+    &--gray{
+      background: linear-gradient(44.55deg, #495053 4.02%, #9bb8c6 89.84%);
+    }
+    &--purple{
+      background: linear-gradient(44.55deg, #3b333f 4.02%, #ce6aca 89.84%);
+    }
+    &--lime{
+      background: linear-gradient(44.55deg, #2d9d05 4.02%, #4ce8b0 89.84%);
+    }
+    &--pink{
+      background: linear-gradient(44.55deg, #ea2626 4.02%, #ca4fd5 84.92%);
+    }
+    &--purple-blue{
+      background: linear-gradient(44.55deg, #97187b 4.02%, #3eadec 89.84%);
+    }
+  }
+  &__list-num{
+    display: block;
+    margin-bottom: 5px;
+    font-size: 34px;
+  }
+  &__list-text{ 
+    font-size: 18px;
+  }
+  &__list-info{
+    position: absolute;
+    left: 21px;
+    bottom: -17px;
+    display: inline-block;
+    border-radius: 30px;
+    padding: 5px 5px 5px 28px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+    text-transform: uppercase;
+    color: #3671bf;
+    background-image: url("../images/icons/multi/spriteMulti.svg#dpa");
+    background-position: 4px center;
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-color: $accent;
+    @extend %nunito-black;
+  }
+}
+
+.subjects{
+  &__tabs{
+    margin-bottom: 90px;
+  }
+}
+
+.books{
+  &__content-inner{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -12px 20px;
+    .books-item{
+      display: flex;
+      margin-bottom: 25px;
+      padding: 0 12px;
+    }
+  }
+}
+
+.book-page{
+  &--item{
+    width: 100%;
+    .books-item__box{
+      padding: 0;
+      max-width: none;
+      box-shadow: none;
+      background: transparent;
+    }
+  }
+  &__info-links{
+    margin-bottom: 50px;
+  }
+  &__books-item {
+    margin-bottom: 50px;
+  }
+}
+
+.theme{
+  &__info-links{
+    margin-bottom: 60px;
+  }
+}
+
+.exercises,
+.exercises-page,
+.theme,
+.book-page,
+.books,
+.subjects,
+.main-page,
+.page-404{
+  padding: 60px 0;
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__content{
+    width: 100%;
+  }
+}
+
+.exercises-page { 
+  &__box {
+    margin-bottom: 40px;
+    border-radius: 8px;
+    padding: 12px 16px;
+    box-shadow: $box-shadow;
+    text-align: center;
+    background-color: $accent;
+  }
+  &__subtitle {
+    display: block;
+    margin-bottom: 0;
+    border-radius: 8px 8px 0 0;
+    padding: 12px 0;
+    text-align: center;
+    color: $accent;
+    background: $gradient;
+  }
+  &__control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  &__control-links{
+    display: flex;
+  }
+  &__link {
+    position: relative;
+    @extend %nunito-bold;
+    color: $link;
+    &::before,
+    &::after{
+      content: "";
+      position: absolute;
+      top: 4px;
+      width: 8px;
+      height: 14px;
+      background-repeat: no-repeat;
+    }
+
+  }
+  &__link--prev {
+    padding-left: 16px;
+    &::before{
+      left: 0;
+      background-image: url("../images/icons/multi/angle-prev.svg");
+    }
+  }
+  &__zoom-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    width: 107px;
+    height: 40px;
+    box-shadow: $box-shadow;
+    background: $gradient;
+    svg{
+      width: 20px;
+      height: 20px;
+      fill: transparent;
+    }
+    +.exercises-page__zoom-link{
+      margin-left: 16px;
+    }
+  }
+  &__zoom-link--minus {
+  }
+  &__zoom-link--plus {
+  }
+  &__link--next {
+    padding-right: 16px;
+    &::after{
+      right: 0;
+      background-image: url("../images/icons/multi/angle-next.svg");
+    }
+  }
+  &__for {
+    margin-bottom: 16px;
+  }
+  &__for-item {
+    display: none;
+    img{
+      margin: 0 auto;
+      width: 100%;
+      max-width: 728px;
+      max-height: 600px;
+      cursor: zoom-in;
+    }
+  }
+  &__for-item--active{
+    display: block;
+  }
+  &__link-error {
+    font-size: 16px;
+    text-decoration: underline;
+    color: $link;
+  }
+}
+
+.page-404{
+  &__content{
+    width: 100%;
+  }
+  &__error-text{
+    margin-bottom: 8px;
+    font-size: 22px;
+    color: #fa3636;
+    @extend %nunito-bold;
+  }
+}
+
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg {
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+
+.mfp-with-zoom.mfp-ready .mfp-container {
+    opacity: 1;
+}
+.mfp-with-zoom.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+
+.mfp-with-zoom.mfp-removing .mfp-container,
+.mfp-with-zoom.mfp-removing.mfp-bg {
+  opacity: 0;
+}
+
+@import "media";

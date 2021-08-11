@@ -21,11 +21,16 @@
     "gulp-sass": "^4.1.0",
     "gulp-svg-sprite": "^1.5.0",
     "gulp-uglify": "^3.0.2",
+    "gulp-util": "^3.0.8",
     "gulp-webp": "^4.0.1",
     "gulp-webp-html": "^1.0.2",
     "imagemin-pngquant": "^9.0.2",
     "imagemin-webp": "^6.0.0",
-    "jquery": "^3.5.1"
+    "jquery": "^3.5.1",
+    "jquery-validation": "^1.19.3",
+    "magnific-popup": "^1.1.0",
+    "rateyo": "^2.3.2",
+    "svgxuse": "^1.2.6"
   },
   "dependencies": {}
 }
